@@ -4,6 +4,7 @@ from fastapi.responses import JSONResponse
 from src.errors.errors import ApiError
 from src.blueprints.blacklist_router import router
 from src.models.database import Base, engine
+import socket
 
 app = FastAPI()
 
@@ -28,3 +29,7 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
 @app.get("/")
 async def root():
     return {"message": "Blacklist service is running"}
+
+@app.get("/server")
+async def server_info():
+    return {"hostname": socket.gethostname()}
