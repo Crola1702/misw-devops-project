@@ -32,4 +32,4 @@ async def root():
 
 @app.get("/server")
 async def server_info():
-    return {"hostname": socket.gethostname()}
+    return {"hostname": socket.gethostname(), "app-version": "v1-2"}
