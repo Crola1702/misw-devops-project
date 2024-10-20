@@ -4,8 +4,6 @@ from fastapi.responses import JSONResponse
 from src.errors.errors import ApiError
 from src.blueprints.blacklist_router import router
 from src.models.database import Base, engine
-from dotenv import load_dotenv
-load_dotenv()
 
 app = FastAPI()
 
